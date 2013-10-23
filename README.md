@@ -35,6 +35,34 @@ https://github.com/bbatsov/ruby-style-guide
 
 
 
+## Enable your work environment in 60 seconds
+
+1. create an account at github
+
+  > http://github.com
+
+2. create an ssh key in your linux/mac terminal
+
+  > ssh-keygen -t rsa -C "your_email@example.com"
+  >
+  > **pro tip #1:** leave the passphrase empty
+  >
+  > chmod 400 ~/.ssh/id_rsa
+
+3. register your public key to github
+
+  > cat ~/.ssh/id_rsa.pub
+  >
+  > add it here: https://github.com/settings/ssh
+  
+4. register your public key to our deployment server
+
+  > cat ~/.ssh/id_rsa.pub
+  > 
+  > james.pinto@helloinnovation.com will register it for you
+
+
+
 
 
 
@@ -122,16 +150,7 @@ git push origin 83-james-pagination
 #### 1 3 4 deploy to our quality server, you might need to show this to your Project Manager
 
 
-> if you don't have a user yet,
-
-> please ask james.pinto@helloinnovation.com,
-
-> make sure to have your ssh public key.
-
-> ssh-keygen -t rsa -C "your_email@example.com"
-
-> **tip:** leave the passphrase empty
-
+> if this is your first time doing this, send your ssh key to james.pinto@helloinnovation.com
 
 
 **on my local machine:**
