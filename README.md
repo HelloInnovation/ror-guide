@@ -32,6 +32,9 @@ https://gist.github.com/jbenet/ee6c9ac48068889b0912
 2. ruby best practices
 https://github.com/bbatsov/ruby-style-guide
 
+3. install pg on a mac
+http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/
+
 
 
 
