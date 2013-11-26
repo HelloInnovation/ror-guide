@@ -35,6 +35,10 @@ https://github.com/bbatsov/ruby-style-guide
 3. install pg on a mac
 http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/
 
+4. redis on a mac
+http://reistiago.wordpress.com/2011/07/23/installing-on-redis-mac-os-x/
+
+
 
 
 
