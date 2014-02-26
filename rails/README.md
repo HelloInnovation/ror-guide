@@ -135,9 +135,9 @@ Monkey-patches too.
 
 Simply mount the publisher class from the model class. Then subscribe from the view.
 
-```erb
-  # app/views/chat_rooms/show.html.erb
+#### app/views/chat_rooms/show.html.erb
 
+```erb
   <script type="text/javascript" src="<%= @chat_room.publisher.url %>/client.js"></script>
   <script type="text/javascript">
     faye = new Faye.Client('<%= @chat_room.publisher.url %>');
@@ -145,8 +145,9 @@ Simply mount the publisher class from the model class. Then subscribe from the v
   </script>
 ```
 
+#### app/assets/javascripts/chat_rooms.js
+
 ```javascript
-  # app/assets/javascripts/chat_rooms.js
   var chatRoomSubscribeHandler = function(data) {
     if (data.action === "text") {
 
@@ -170,17 +171,17 @@ Simply mount the publisher class from the model class. Then subscribe from the v
   };
 ```
 
-```ruby
-# app/models/
+#### app/models/chat_room.rb
 
+```ruby
   class ChatRoom
     mount_publisher
   end
 ```
 
-```ruby
-  # app/publishers/chat_room_publisher.rb
+#### app/publishers/chat_room_publisher.rb
 
+```ruby
   class ChatRoomPublisher < Publisher::Model
 
     def text!
