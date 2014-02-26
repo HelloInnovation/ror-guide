@@ -87,20 +87,20 @@ If it's not filtering and not saving form fields, then you should probably place
     # layers
     mount_uploader :image, PostImageUploader
     mount_publisher
-    mount_transactions post: [:api_connect, :api_response]
+    mount_transactions post: [:download, :api_response]
 
     # https://github.com/pluginaweek/state_machine#example
     state_machine :state do
-      state(:connecting)
-      state(:connected) { validates_presence_of :api_data }
+      state(:downloading)
+      state(:downloaded) { validates_presence_of :downloaded_at, :downloaded_content }
       state(:analyzing)
       state(:analyzed)
 
-      event(:to_connecting) { transition nil         => :connecting }
-      event(:to_connected)  { transition :connecting => :connected  }
+      event(:to_downloading) { transition nil          => :downloading }
+      event(:to_downloaded)  { transition :downloading => :downloaded  }
 
-      event(:to_analyzing)  { transition :connected  => :analyzing  }
-      event(:to_analyzed)   { transition :analyzing  => :analyzed   }
+      event(:to_analyzing)   { transition :downloaded  => :analyzing   }
+      event(:to_analyzed)    { transition :analyzing   => :analyzed    }
     end
   end
 ```
